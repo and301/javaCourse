@@ -1,91 +1,192 @@
 package com.company;
 
+
 public class Main {
 
     public static void main(String[] args) {
 
-        int myValue = 10000;
-        int myMinIntValue = Integer.MIN_VALUE;
-        int myMaximUmValue = Integer.MAX_VALUE;
+        //CONSTRUCTOR
+        Constructor constructor = new Constructor("black", 1, "chevrole", 1993);
+
+        //CLASSES
+        ThisIsTheCarClass  keyInput = new ThisIsTheCarClass();
+        keyInput.imputKey(123456);
+        keyInput.showProperties(123456789);
+
+        //CASTING
+        casting();
+
+        //EMPTY AND FILLED VARIABLE
+        emptyAndFilledVariable();
+
+        //CHECKING THE RANGE OF A NUMBER
+        checkRangeOfAnumber();
+
+        //TERNARY OPERATOR
+        ternaryOperator();
+        ternaryOperatorExercise();
+
+        //IF THEN STATEMENT
+        IfThen();
+        IfThenExcercise();
+
+        //INPUT METHOD
+        methodImput("Hello, how are you!", 254);
+        int result = methodOutPut(20, 54);
 
 
+        //OVERLOADING
+        methodOverloading(20, 52);
+        methodOverloading();
 
-        System.out.println("Integer Minimum Value =" + myMinIntValue);
-        System.out.println("Integer Maximum Value =" + myMaximUmValue);
+        //SWITCH STATEMENT
+        switchStatement(201);
 
-        byte myMaxByteValue = Byte.MAX_VALUE;
-        byte myMinByteValue = Byte.MIN_VALUE;
-        System.out.println("Byte Minimum Value =" + myMaxByteValue);
-        System.out.println("Byte Maximum Value =" + myMinByteValue);
-
-        short myMaxShortValue = Short.MAX_VALUE;
-        short myMinShortValue = Short.MIN_VALUE;
-        System.out.println("Short Maximum Value =" + myMaxShortValue);
-        System.out.println("Short Minimum Value =" + myMinShortValue);
-
-        long myLongValue = 100;
-
-        long myMaxLongValue = Long.MAX_VALUE;
-        long myMinLongValue = Long.MIN_VALUE;
-        System.out.println("Long Maximum Value =" + myMaxLongValue);
-        System.out.println("Long Minimum Value =" + myMinLongValue);
-
-        float myMaxFloatValue = Float.MAX_VALUE;
-        float myMinFloatValue = Float.MIN_VALUE;
-        System.out.println("Float Maximum Value =" + myMaxFloatValue);
-        System.out.println("Float Minimum Value =" + myMinFloatValue);
-
-        double myMaxDoubleValue = Double.MAX_VALUE;
-        double myMinDoubleValue = Double.MIN_VALUE;
-        System.out.println("Double Maximum Value =" + myMaxFloatValue);
-        System.out.println("Double Minimum Value =" + myMinFloatValue);
+        //FOR LOOPS
+        forLoops();
 
 
+        //GETTER AND SETTER
+        simpleGetterAndSetter obj = new simpleGetterAndSetter();
+        obj.setNumber(10);//save the value
+        int num = obj.getNumber();//shows the value
 
 
-        int myTotal = (myMinIntValue / 2);
-        byte myNewByteValue = (byte) (myMinByteValue / 2 );
-        System.out.println("Casting convertion =" + myNewByteValue);
-
-        short myNewShortValue = (short) (myMaxShortValue/ 2 );
-        System.out.println("Casting convertion =" + myNewShortValue);
-
-        float myNewFloatValue = (float) (myMaxShortValue/ 2 );
-        System.out.println("Floating,Maximum  =" + myNewFloatValue);
-
-        int myIntValue = 5 / 2;
-        float myFloatValue = (float) (5.25f);
-        double myDoubleValue = 5.25d;
-
-        System.out.println("Floating,Maximum  =" + myFloatValue);
-
-        float myFloatValues =  5f / 2f;
-        double myDoubleValues = 5d / 2d;
-
-        System.out.println("MyIntValue  =" + myIntValue);
-        System.out.println("Float  =" + myFloatValues);
-        System.out.println("Double  =" + myDoubleValues);
-
-        int CountOfPounds = 5;
-        double ConvertedToKilograms = CountOfPounds * 0.45359237;
-        System.out.println("200 lbs to kilograms is  =" + ConvertedToKilograms);
-
-        double pi = 3.1415927d;
-        double anotherNumber = 3_000_000.4_567_890d;
-        System.out.println("200 lbs to kilograms is  =" + pi);
-        System.out.println("200 lbs to kilograms is  =" + anotherNumber);
-
-        char myChar = 'd';
-        char myUnicodeChar = '\u0044';
-        System.out.println(myUnicodeChar);
-
-        boolean myTrueBoolenValue = true;
-        boolean myFalseBoolenValue = false;
-        System.out.println(myTrueBoolenValue);
-        System.out.println(myFalseBoolenValue);
-
-
+        //SUPER
+        SuperSampleChild superSampleChild = new SuperSampleChild();
+        superSampleChild.printColor();
 
 
     }
+
+    public static void casting() {
+        int value = 1;
+        int myValue = (int) (value * 2);
+        System.out.println(myValue);
+    }
+
+    public static void emptyAndFilledVariable() {
+        String name;//Empty variable that can take type of String data
+        name = "Andres ";
+        String lastName = "Angulo "; //variable that contains type of String data
+        System.out.println(("the variables are last name ") + lastName + ("And first name ") + name);
+    }
+
+    public static void checkRangeOfAnumber() {
+        double myMaxLongValue = Double.MAX_VALUE;
+        System.out.println(myMaxLongValue);
+    }
+
+    public static void ternaryOperator() {
+        //create the variable
+        boolean isItAcar = true;
+        //create a new variable that will take the data from the first variable by using a ternary operator
+        boolean wasACar = isItAcar ? true : false;//if isItAcar is true assigned True to WASaCar if it is not true assigned False
+        System.out.println(wasACar);
+
+
+    }
+
+    public static void ternaryOperatorExercise() {
+        // EXERCISE Java program to find largest among two numbers using ternary operator
+        int n1 = 1;
+        int n2 = 2;
+        int LargerNumber = (n1 > n2) ? n1 : n2; //we can use Math.max(n1, n2); to check the larger number
+        System.out.println(LargerNumber);
+    }
+
+    public static void IfThen() {
+        boolean isAlien = true;
+        if (!isAlien) {//adding ! to the variable will make to check if the variable is false
+            System.out.println("it is not an Alien");
+            System.out.println("I am scared");
+        }
+
+
+    }
+
+    public static void IfThenExcercise() {
+        //Take three numbers from the user and print the greatest number
+        int number1 = 25;
+        int number2 = 78;
+        int number3 = 87;
+
+        if (number3 > number2 || number3 > number1) {
+            System.out.println("The greatest is " + number3);
+
+        }
+
+    }
+
+    public static void methodImput(String greeting, int number) {
+        int sum = number + number;
+
+        System.out.println("The greeting  is " + greeting);
+        System.out.println("The sum is " + sum);
+    }
+
+    public static int methodOutPut(int number, int number2) {
+        int sum = number + number2;
+        System.out.println("The sum is " + sum);
+        return sum;
+    }
+
+    public static int methodOverloading(int number, int number2) {
+        int sum = number + number2;
+        System.out.println("I am overloading with the same name as another method with inputs " + sum);
+        return sum;
+    }
+
+    public static void methodOverloading() {
+        int number = 10;
+        int number2 = 25;
+        int sum = number + number2;
+        System.out.println("I am overloading with the same name as another method with no inputs " + sum);
+    }
+
+    public static void switchStatement(int switchValue) {
+        switch ((switchValue)) {//checks that variable with the below variables
+            case 1:
+                System.out.printf("value was  1 ");
+                break;
+
+            case 2:
+                System.out.printf("value was not 2 ");
+                break;
+
+            case 3:
+            case 4:
+            case 5:
+                System.out.printf("was a 3 or 4 or 5 ");
+                System.out.printf("actualluy it was " + switchValue);
+                break;
+
+            default:
+                System.out.printf("value was not any of the cases ");
+
+        }
+    }
+
+    public static void forLoops() {
+
+        int number = 20;
+
+        for (number = 20; number < 50; number++) {
+
+            System.out.println("I am not greater than 50, your number " + number);
+
+
+        }
+
+        for (int i = 2; i < 9; i++) {
+            System.out.println("10000 at 2% interest = ");
+
+        }
+
+    }
+
 }
+
+
+
+
